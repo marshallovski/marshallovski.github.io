@@ -1,3 +1,5 @@
+import { fiple, pages, fetchArticles } from "./index.js";
+
 const errType = new URLSearchParams(window.location.search).get('article');
 
 switch (errType) {
@@ -5,7 +7,7 @@ switch (errType) {
         fiple.render(
             pages.missingRootElem,
             { component: 'errPage' },
-            props = { err: errType }
+            { err: errType }
         );
         break;
 
@@ -13,7 +15,7 @@ switch (errType) {
         fiple.render(
             pages.inlineStyles,
             { component: 'article' },
-            props = { err: errType }
+            { err: errType }
         );
         break;
 
@@ -21,7 +23,7 @@ switch (errType) {
         fiple.render(
             pages.elemEvents,
             { component: 'article' },
-            props = { err: errType }
+            { err: errType }
         );
         break;
 
@@ -29,7 +31,7 @@ switch (errType) {
         fiple.render(
             pages.addingClassesToElem,
             { component: 'article' },
-            props = { err: errType }
+            { err: errType }
         );
         break;
 
@@ -37,7 +39,7 @@ switch (errType) {
         fiple.render(
             pages.templating,
             { component: 'article' },
-            props = { err: errType }
+            { err: errType }
         );
         break;
 
@@ -45,7 +47,7 @@ switch (errType) {
         fiple.render(
             pages.elemId,
             { component: 'article' },
-            props = { err: errType }
+            { err: errType }
         );
         break;
 
@@ -53,7 +55,7 @@ switch (errType) {
         fiple.render(
             pages.RtreeEmpty,
             { component: 'errPage' },
-            props = { err: errType }
+            { err: errType }
         );
         break;
 
@@ -61,8 +63,7 @@ switch (errType) {
     case null:
         fiple.render(
             pages.docsHome,
-            { component: 'docsHome' },
-            props = false
+            { component: 'docsHome' }
         ).then(fetchArticles());
         break;
 
@@ -70,7 +71,7 @@ switch (errType) {
         fiple.render(
             pages.notfound,
             { component: '404' },
-            props = { err: errType }
+            { err: errType }
         );
         break;
 }

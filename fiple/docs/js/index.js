@@ -1,4 +1,6 @@
-fiple.root = document.getElementById('approot');
+import Fiple from "./fiple/index.js";
+
+const fiple = new Fiple(document.getElementById('approot'));
 
 const pages = {
     missingRootElem: [
@@ -331,3 +333,5 @@ async function fetchArticles() {
                 )
         );
 }
+
+export { fiple, pages, fetchArticles };
